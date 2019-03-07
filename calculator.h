@@ -2,6 +2,7 @@
 #define CALCULATOR_H
 
 #include <QMainWindow>
+#include <string>
 
 namespace Ui {
 class Calculator;
