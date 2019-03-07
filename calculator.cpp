@@ -29,6 +29,8 @@ Calculator::Calculator(QWidget *parent) :
                      this, SLOT(compute_overall()));
     QObject::connect(ui->slider_11 ,SIGNAL(valueChanged(int)),
                      this, SLOT(compute_overall()));
+    QObject::connect(ui->radioButton_A ,SIGNAL(clicked()),
+                     this, SLOT(compute_overall()));
 
 }
 
@@ -53,8 +55,18 @@ void Calculator::compute_overall(){
     double midterm2 = ui -> slider_10 ->value();
     double final = ui -> slider_11 ->value();
 
-    double sum = hw_avg*0.25 + midterm1*0.2 + midterm2*0.2 + final*0.35;
+    double max_midterm = 0;
+    if(midterm1 > midterm2)
+        max_midterm = midterm1;
+    else
+        max_midterm = midterm2;
 
+    double sum = 0;
+
+    if(ui->radioButton_A->isChecked())
+        sum = hw_avg*0.25 + midterm1*0.2 + midterm2*0.2 + final*0.35;
+    if(ui->radioButton_B->isChecked())
+        sum = hw_avg*0.25 + max_midterm*0.3 + final*0.44;
 
     ui->score->setText(QString::number(sum));
 }
