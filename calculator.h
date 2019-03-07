@@ -16,10 +16,11 @@ public:
     ~Calculator();
 
 signals:
-    void compute_overall();
+    //void compute_overall();
 
 public slots:
     void update_overall(int);
+    void compute_overall();
 
 private:
     Ui::Calculator *ui;
