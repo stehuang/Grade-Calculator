@@ -11,6 +11,24 @@ Calculator::Calculator(QWidget *parent) :
                      this, SLOT(compute_overall()));
     QObject::connect(ui->slider_2 ,SIGNAL(valueChanged(int)),
                      this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_3 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_4 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_5 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_6 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_7 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_8 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_9 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_10 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_11 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
 
 }
 
@@ -23,7 +41,20 @@ Calculator::~Calculator()
 void Calculator::compute_overall(){
     double hw1 = ui -> slider_1 ->value();
     double hw2 = ui -> slider_2 ->value();
-    double sum = hw1+hw2;
+    double hw3 = ui -> slider_3 ->value();
+    double hw4 = ui -> slider_4 ->value();
+    double hw5 = ui -> slider_5 ->value();
+    double hw6 = ui -> slider_6 ->value();
+    double hw7 = ui -> slider_7 ->value();
+    double hw8 = ui -> slider_8 ->value();
+    double hw_avg = (hw1+hw2+hw3+hw4+hw5+hw6+hw7+hw8)/8;
+
+    double midterm1 = ui -> slider_9 ->value();
+    double midterm2 = ui -> slider_10 ->value();
+    double final = ui -> slider_11 ->value();
+
+    double sum = hw_avg*0.25 + midterm1*0.2 + midterm2*0.2 + final*0.35;
+
 
     ui->score->setText(QString::number(sum));
 }
