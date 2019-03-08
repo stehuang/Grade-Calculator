@@ -75,20 +75,15 @@ void Calculator::compute_overall(){
 
         if(ui->radioButton_B1->isChecked()) {
             sum = hw_avg*0.25 + midterm1*0.2 + midterm2*0.2 + final*0.35;
-            std::cout << "sum of scheme a:" << sum << std::endl;
             ui->score10b->setText(QString::number(sum));
         }
         if(ui->radioButton_B2->isChecked()){
             sum = hw_avg*0.25 + max_midterm*0.3 + final*0.44;
-            std::cout << "sum of scheme b:" << sum << std::endl;
             ui->score10b->setText(QString::number(sum));
         }
-
-        //update_overall(sum);
-        ui->score10b->setText(QString::number(sum));
-        //ui->score->update();
     }
-    std::cout << "running";
+
+
 }
 
 
