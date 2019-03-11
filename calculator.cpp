@@ -1,5 +1,6 @@
 #include "calculator.h"
 #include "ui_calculator.h"
+#include <iostream>
 
 
 Calculator::Calculator(QWidget *parent) :
@@ -8,6 +9,7 @@ Calculator::Calculator(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // pic10b
     QObject::connect(ui->slider_1 ,SIGNAL(valueChanged(int)),
                      this, SLOT(compute_overall()));
     QObject::connect(ui->slider_2 ,SIGNAL(valueChanged(int)),
@@ -30,10 +32,29 @@ Calculator::Calculator(QWidget *parent) :
                      this, SLOT(compute_overall()));
     QObject::connect(ui->slider_11 ,SIGNAL(valueChanged(int)),
                      this, SLOT(compute_overall()));
-    QObject::connect(ui->radioButton_A ,SIGNAL(clicked()),
+    QObject::connect(ui->radioButton_B1 ,SIGNAL(clicked()),
                      this, SLOT(compute_overall()));
-    QObject::connect(ui->comboBox ,SIGNAL(currentIndexChanged()),
+    QObject::connect(ui->radioButton_B2 ,SIGNAL(clicked()),
                      this, SLOT(compute_overall()));
+
+    // pic10c
+    QObject::connect(ui->slider_c1 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_c2 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_c3 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_c4 ,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_c5,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->slider_c6,SIGNAL(valueChanged(int)),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->radioButton_C1 ,SIGNAL(clicked()),
+                     this, SLOT(compute_overall()));
+    QObject::connect(ui->radioButton_C2 ,SIGNAL(clicked()),
+                     this, SLOT(compute_overall()));
+
 
 }
 
@@ -44,8 +65,9 @@ Calculator::~Calculator()
 
 
 void Calculator::compute_overall(){
-    QString course = ui->comboBox->currentText();
-    if(course == "PIC 10B"){
+
+    // PIC 10B
+    if(ui->tab_1->isActiveWindow()){
         double hw1 = ui -> slider_1 ->value();
         double hw2 = ui -> slider_2 ->value();
         double hw3 = ui -> slider_3 ->value();
@@ -68,23 +90,49 @@ void Calculator::compute_overall(){
 
         double sum = 0;
 
-        if(ui->radioButton_A->isChecked())
-            sum = hw_avg*0.25 + midterm1*0.2 + midterm2*0.2 + final*0.35;
-        if(ui->radioButton_B->isChecked())
-            sum = hw_avg*0.25 + max_midterm*0.3 + final*0.44;
 
-        update_overall(sum);
-        ui->score->setText(QString::number(sum));
+        if(ui->radioButton_B1->isChecked()) {
+            sum = hw_avg*0.25 + midterm1*0.2 + midterm2*0.2 + final*0.35;
+            ui->score10b->setText(QString::number(sum));
+        }
+        if(ui->radioButton_B2->isChecked()){
+            sum = hw_avg*0.25 + max_midterm*0.3 + final*0.44;
+            ui->score10b->setText(QString::number(sum));
+        }
     }
 
+    // PIC 10C
+    if(ui->tab_2->isActiveWindow()){
+        double hw1 = ui -> slider_c1 ->value();
+        double hw2 = ui -> slider_c2 ->value();
+        double hw3 = ui -> slider_c3 ->value();
+        double hw_avg = (hw1+hw2+hw3)/3;
+
+        double midterm = ui -> slider_c4 ->value();
+        double final = ui -> slider_c5 ->value();
+        double project = ui -> slider_c6 ->value();
+
+        double sum = 0;
+
+        if(ui->radioButton_C1->isChecked()) {
+            sum = hw_avg*0.15 + midterm*0.25 + final*0.30 + project*0.35;
+            ui->score10c->setText(QString::number(sum));
+        }
+        if(ui->radioButton_C2->isChecked()){
+            sum = hw_avg*0.15 + final*0.50 + project*0.35;
+            ui->score10c->setText(QString::number(sum));
+        }
+    }
+
+
 }
 
 
-void Calculator::update_overall(int unused){
-    double score = 31.4;
-    //score = static_cast<double>(unused);
+//void Calculator::update_overall(int score){
+//    //double score = 31.4;
+//    //score = static_cast<double>(unused);
 
-    ui->score->setText(QString::number(unused));
+//    ui->score->setText(QString::number(score));
 
-    return;
-}
+//    return;
+//}
