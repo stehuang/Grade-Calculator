@@ -785,7 +785,7 @@
        <property name="geometry">
         <rect>
          <x>470</x>
-         <y>90</y>
+         <y>110</y>
          <width>42</width>
          <height>22</height>
         </rect>
@@ -798,7 +798,7 @@
        <property name="geometry">
         <rect>
          <x>300</x>
-         <y>70</y>
+         <y>90</y>
          <width>71</width>
          <height>16</height>
         </rect>
@@ -824,7 +824,7 @@
        <property name="geometry">
         <rect>
          <x>300</x>
-         <y>90</y>
+         <y>110</y>
          <width>160</width>
          <height>22</height>
         </rect>
@@ -853,7 +853,7 @@
        <property name="geometry">
         <rect>
          <x>300</x>
-         <y>20</y>
+         <y>0</y>
          <width>60</width>
          <height>16</height>
         </rect>
@@ -866,7 +866,7 @@
        <property name="geometry">
         <rect>
          <x>300</x>
-         <y>40</y>
+         <y>20</y>
          <width>160</width>
          <height>22</height>
         </rect>
@@ -882,13 +882,55 @@
        <property name="geometry">
         <rect>
          <x>470</x>
-         <y>40</y>
+         <y>20</y>
          <width>42</width>
          <height>22</height>
         </rect>
        </property>
        <property name="maximum">
         <number>100</number>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinBox_c6">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>60</y>
+         <width>42</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_project">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>40</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Project</string>
+       </property>
+      </widget>
+      <widget class="QSlider" name="slider_c6">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>60</y>
+         <width>160</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </widget>
@@ -1273,6 +1315,182 @@
     <hint type="destinationlabel">
      <x>458</x>
      <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_c1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_c1</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>167</x>
+     <y>108</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_c1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>slider_c1</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>264</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>203</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_c2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_c2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>197</x>
+     <y>164</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>269</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_c2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>slider_c2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>214</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_c3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_c3</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>272</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_c3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>slider_c3</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>259</x>
+     <y>206</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>219</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_c4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_c4</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>408</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_c5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_c5</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>449</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>505</x>
+     <y>221</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_c5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>slider_c5</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>514</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>433</x>
+     <y>221</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_c6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_c6</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>412</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>528</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_c6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>slider_c6</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>504</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>456</x>
+     <y>155</y>
     </hint>
    </hints>
   </connection>

@@ -20,7 +20,7 @@ signals:
     //void compute_overall();
 
 public slots:
-    void update_overall(int);
+    //void update_overall(int);
     void compute_overall();
 
 private:
