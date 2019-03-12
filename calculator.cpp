@@ -92,13 +92,17 @@ void Calculator::compute_overall(){
 
 
         if(ui->radioButton_B1->isChecked()) {
+            std::cout << "scheme a" << std::endl;
             sum = hw_avg*0.25 + midterm1*0.2 + midterm2*0.2 + final*0.35;
             ui->score10b->setText(QString::number(sum));
         }
         if(ui->radioButton_B2->isChecked()){
+            std::cout << "scheme b" << std::endl;
             sum = hw_avg*0.25 + max_midterm*0.3 + final*0.44;
             ui->score10b->setText(QString::number(sum));
         }
+        std::cout << "sum:" << sum << std::endl;
+        ui->score10b->repaint();
     }
 
     // PIC 10C
@@ -122,6 +126,7 @@ void Calculator::compute_overall(){
             sum = hw_avg*0.15 + final*0.50 + project*0.35;
             ui->score10c->setText(QString::number(sum));
         }
+        ui->score10c->repaint();
     }
 
 
